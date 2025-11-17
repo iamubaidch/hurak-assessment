@@ -48,7 +48,7 @@ class GenerateBoxes extends Command
                 Mail::raw(
                     "1st Task Done - Muhammad Ubaidullah",
                     function ($message) {
-                        $message->to('ubaidullah.nkutech@gmail.com')
+                        $message->to('Dawood.ahmed@collaborak.com')
                             ->subject('1st Task Done - Muhammad Ubaidullah');
                     }
                 );
@@ -57,7 +57,7 @@ class GenerateBoxes extends Command
                 $this->info('16 reached. Email sent. Stopping further generation.');
                 Log::info('Boxes generation completed and notification email sent.', [
                     'boxes_count' => Box::count(),
-                    'recipient' => 'ubaidullah.nkutech@gmail.com',
+                    'recipient' => 'Dawood.ahmed@collaborak.com',
                     'subject' => '1st Task Done - Muhammad Ubaidullah',
                 ]);
             } catch (\Exception $e) {
