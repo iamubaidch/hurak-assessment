@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+:root {
+    --background: #ffffff;
+    --foreground: #171717;
+}
+
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #0a0a0a;
+        --foreground: #ededed;
+    }
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.site-header {
+    padding: 12px 20px;
+    background: #0070f3;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.site-main {
+    flex: 1 1 auto;
+}
+
+.site-footer {
+    padding: 12px 18px;
+    background: #f3f4f6;
+    text-align: center;
+    font-size: 13px;
+    color: #374151;
+}
+
+.app-container {
+    padding: 28px;
+    max-width: 1100px;
+    margin: 24px auto;
+}
+
+.top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.panel {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.left-panel {
+    width: 220px;
+    min-width: 180px;
+}
+
+.chip-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.chip {
+    height: 36px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    color: #fff;
+    font-weight: 700;
+    box-shadow: 0 2px 6px rgba(16, 24, 40, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.chip.black-text {
+    color: #111;
+}
+
+.controls {
+    margin-top: 14px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    background: #0070f3;
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(3, 102, 214, 0.12);
+}
+
+.btn.secondary {
+    background: #111827;
+}
+
+.boxes-area {
+    flex: 1;
+    min-height: 160px;
+}
+
+.boxes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 12px;
+    align-items: start;
+}
+
+.box-item {
+    height: 40px;
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    transition: transform 250ms ease, opacity 200ms ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: #fff;
+}
+
+.box-item.small-label {
+    font-size: 12px;
+}
+
+.muted {
+    color: #6b7280;
+}
+
+@media (max-width: 720px) {
+    .panel {
+        flex-direction: column;
+    }
+    .left-panel {
+        width: 100%;
+    }
+}
